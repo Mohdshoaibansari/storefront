@@ -7,51 +7,56 @@ This project is a high-performance, localized e-commerce storefront built with N
 - **Main Technologies:**
     - **Framework:** Next.js 15 (App Router)
     - **Language:** TypeScript
-    - **Styling:** Tailwind CSS, Radix UI, Headless UI
+    - **Styling:** Tailwind CSS (Custom Induvra Palette), Radix UI, Headless UI
+    - **Animations:** Framer Motion
     - **Backend Integration:** @medusajs/js-sdk (V2)
     - **State Management:** React Context (Modal Context)
-    - **Icons:** @medusajs/icons
+    - **Icons:** Lucide React (Preferred), @medusajs/icons
 
-## Building and Running
+    ## Building and Running
 
-### Prerequisites
-- Node.js (version 18+ recommended)
-- Medusa Backend (V2) running
+    ### Prerequisites
+    - Node.js (version 18+ recommended)
+    - Medusa Backend (V2) running
 
-### Installation
-```bash
-npm install
-```
+    ### Installation
+    ```bash
+    npm install
+    ```
 
-### Development
-```bash
-npm run dev
-```
-Starts the development server on `http://localhost:8000`.
+    ### Development
+    ```bash
+    npm run dev
+    ```
+    Starts the development server on `http://localhost:8000`.
 
-### Production
-```bash
-npm run build
-npm start
-```
-Builds the project for production and starts it on `http://localhost:8000`.
+    ### Production
+    ```bash
+    npm run build
+    npm start
+    ```
+    Builds the project for production and starts it on `http://localhost:8000`.
 
-### Linting
-```bash
-npm run lint
-```
+    ### Linting
+    ```bash
+    npm run lint
+    ```
 
-## Workflow & Deployment
-This project follows a Local-First development cycle with GitHub as the central synchronization point:
+    ## Workflow & Deployment
+    This project follows a Local-First development cycle with GitHub as the central synchronization point:
 
-1.  **Local Development:** All features and fixes are developed and tested locally.
-2.  **Version Control (GitHub):** Changes are pushed to the GitHub repository.
-3.  **EC2 Deployment:** The live environment on the EC2 instance is updated by pulling the latest changes from GitHub (`git pull`).
+    1.  **Local Development:** All features and fixes are developed and tested locally.
+    2.  **Version Control (GitHub):** Changes are pushed to the GitHub repository.
+    3.  **EC2 Deployment:** The live environment on the EC2 instance is updated by pulling the latest changes from GitHub (`git pull`).
 
----
+    ---
 
-## Key Directories
-- `src/app/`: Contains the Next.js App Router routes. Note the `[countryCode]` dynamic segment for localization.
+    ## Design System (Induvra)
+    - **Typography:** `Cormorant Garamond` (Headings) and `Jost` (Body).
+    - **Colors:** Primary Terracotta (`#B35C44`), Pearl Background (`#FAF9F6`), Sage Accents.
+    - **Animations:** Use `framer-motion` for scroll reveals and interactive transitions.
+
+    ## Key Directories- `src/app/`: Contains the Next.js App Router routes. Note the `[countryCode]` dynamic segment for localization.
 - `src/lib/`: Core utilities, SDK configuration (`config.ts`), and data fetching logic (`data/`).
 - `src/modules/`: Component-based architecture. Logic and UI for specific domains (account, cart, checkout, products, etc.).
 - `src/styles/`: Global CSS and Tailwind configurations.
