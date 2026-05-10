@@ -3,7 +3,7 @@ import { listCollections } from "@lib/data/collections"
 import { Text, clx, Heading } from "@modules/common/components/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
-import { Instagram, Twitter, Facebook } from "lucide-react"
+import { Globe } from "lucide-react"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -26,9 +26,7 @@ export default async function Footer() {
               Curating premium handcrafted home decor that tells a story. From our artisans to your home, we bring elegance and tradition together.
             </Text>
             <div className="flex gap-x-4">
-              <Instagram size={20} className="text-brand-accent hover:text-brand-primary transition-colors cursor-pointer" />
-              <Twitter size={20} className="text-brand-accent hover:text-brand-primary transition-colors cursor-pointer" />
-              <Facebook size={20} className="text-brand-accent hover:text-brand-primary transition-colors cursor-pointer" />
+              <Globe size={20} className="text-brand-accent hover:text-brand-primary transition-colors cursor-pointer" />
             </div>
           </div>
           
