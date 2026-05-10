@@ -42,9 +42,9 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
       <Component
         ref={ref}
         className={clsx(
-          "font-semibold",
-          Component === "h1" && "text-3xl",
-          Component === "h2" && "text-2xl",
+          "font-headings font-semibold",
+          Component === "h1" && "text-display-large",
+          Component === "h2" && "text-display-medium",
           Component === "h3" && "text-xl",
           className
         )}
@@ -82,14 +82,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={clsx(
-          "inline-flex gap-2 items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-          variant === "primary" && "bg-black text-white hover:bg-gray-800",
+          "inline-flex gap-2 items-center justify-center rounded-brand font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95",
+          variant === "primary" && "bg-brand-primary text-white hover:bg-opacity-90 shadow-md hover:shadow-lg",
           variant === "secondary" &&
-            "bg-white text-black border border-gray-200 hover:bg-gray-50",
-          variant === "transparent" && "bg-transparent hover:bg-gray-100",
-          size === "small" && "h-8 px-3 text-sm",
-          size === "medium" && "h-10 px-4",
-          size === "large" && "h-12 px-6 text-lg",
+            "bg-white text-brand-accent border border-brand-accent hover:bg-brand-accent hover:text-white",
+          variant === "transparent" && "bg-transparent hover:bg-brand-muted text-brand-accent",
+          size === "small" && "h-10 px-4 text-sm",
+          size === "medium" && "h-12 px-6",
+          size === "large" && "h-14 px-8 text-lg",
           className
         )}
         {...props}

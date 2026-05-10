@@ -20,6 +20,13 @@ module.exports = {
         padding: "padding-top padding-right padding-bottom padding-left",
       },
       colors: {
+        background: "#FAF9F6",
+        brand: {
+          primary: "#B35C44",
+          secondary: "#8A9A5B",
+          accent: "#2C2C2C",
+          muted: "#F3F4F6",
+        },
         grey: {
           0: "#FFFFFF",
           5: "#F9FAFB",
@@ -40,7 +47,11 @@ module.exports = {
         base: "4px",
         rounded: "8px",
         large: "16px",
+        brand: "16px",
         circle: "9999px",
+      },
+      boxShadow: {
+        premium: "0 10px 30px -10px rgba(0,0,0,0.1)",
       },
       maxWidth: {
         "8xl": "100rem",
@@ -58,16 +69,9 @@ module.exports = {
         "3xl": "2rem",
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Ubuntu",
-          "sans-serif",
-        ],
+        sans: ["var(--font-body)", "Inter", "sans-serif"],
+        headings: ["var(--font-headings)", "serif"],
+        body: ["var(--font-body)", "sans-serif"],
       },
       keyframes: {
         ring: {

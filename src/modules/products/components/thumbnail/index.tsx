@@ -22,15 +22,16 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
+  const hoverImage = images?.[1]?.url || images?.[0]?.url
 
   return (
     <Container
       className={clx(
-        "relative w-full overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
+        "relative w-full overflow-hidden p-0 bg-brand-muted shadow-premium rounded-brand transition-all duration-500 ease-in-out",
         className,
         {
           "aspect-[11/14]": isFeatured,
-          "aspect-[9/16]": !isFeatured && size !== "square",
+          "aspect-[4/5]": !isFeatured && size !== "square",
           "aspect-[1/1]": size === "square",
           "w-[180px]": size === "small",
           "w-[290px]": size === "medium",
@@ -40,7 +41,12 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
       )}
       data-testid={dataTestid}
     >
-      <ImageOrPlaceholder image={initialImage} size={size} />
+      <div className="relative w-full h-full group">
+        <ImageOrPlaceholder image={initialImage} size={size} className="transition-opacity duration-500 group-hover:opacity-0" />
+        {hoverImage && (
+           <ImageOrPlaceholder image={hoverImage} size={size} className="opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        )}
+      </div>
     </Container>
   )
 }
@@ -48,19 +54,20 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
 const ImageOrPlaceholder = ({
   image,
   size,
-}: Pick<ThumbnailProps, "size"> & { image?: string }) => {
+  className,
+}: Pick<ThumbnailProps, "size"> & { image?: string; className?: string }) => {
   return image ? (
     <Image
       src={image}
       alt="Thumbnail"
-      className="absolute inset-0 object-cover object-center"
+      className={clx("absolute inset-0 object-cover object-center", className)}
       draggable={false}
-      quality={50}
+      quality={80}
       sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
       fill
     />
   ) : (
-    <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+    <div className={clx("w-full h-full absolute inset-0 flex items-center justify-center bg-brand-muted", className)}>
       <PlaceholderImage size={size === "small" ? 16 : 24} />
     </div>
   )

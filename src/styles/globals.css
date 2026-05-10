@@ -2,6 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  body {
+    @apply bg-background text-brand-accent font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headings;
+  }
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -55,7 +65,15 @@
   }
 
   .contrast-btn {
-    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    @apply px-4 py-2 border border-brand-accent rounded-full hover:bg-brand-accent hover:text-white transition-colors duration-200 ease-in;
+  }
+
+  .text-display-large {
+    @apply font-headings text-4xl md:text-6xl leading-tight;
+  }
+
+  .text-display-medium {
+    @apply font-headings text-2xl md:text-4xl leading-tight;
   }
 
   .text-xsmall-regular {
