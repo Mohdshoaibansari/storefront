@@ -4,7 +4,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Heading, Text } from "@modules/common/components/ui"
-import { Instagram } from "lucide-react"
+import { Camera } from "lucide-react"
 
 const InstaFeed = () => {
   const images = [
@@ -22,7 +22,7 @@ const InstaFeed = () => {
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-y-6">
           <div className="flex flex-col gap-y-2">
             <span className="text-brand-primary uppercase tracking-[0.3em] font-semibold text-xs mb-2 flex items-center gap-x-2">
-              <Instagram size={14} /> @induvra_home
+              <Camera size={14} /> @induvra_home
             </span>
             <Heading level="h2" className="text-display-medium tracking-tight">Handcrafted in Real Homes</Heading>
           </div>
@@ -48,7 +48,7 @@ const InstaFeed = () => {
                 fill
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                <Instagram size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Camera size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </motion.div>
           ))}
