@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="h-[90vh] w-full relative overflow-hidden bg-brand-muted">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?q=80&w=2000&auto=format&fit=crop"
+          src="/banners/asset-1.jpg"
           alt="Induvra Lifestyle"
           className="object-cover"
           fill

@@ -58,7 +58,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ categories }) => {
                     
                     <div className="w-1/3 relative aspect-[4/3] rounded-brand overflow-hidden group">
                       <Image
-                        src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop"
+                        src="/categories/asset-1.jpg"
                         alt="Featured Category"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         fill
