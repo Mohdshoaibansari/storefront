@@ -47,11 +47,24 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ categories }) => {
                         <div key={child.id} className="flex flex-col gap-y-4">
                           <LocalizedClientLink
                             href={`/categories/${child.handle}`}
-                            className="font-semibold text-brand-accent hover:text-brand-primary transition-colors"
+                            className="font-semibold text-brand-accent hover:text-brand-primary transition-colors text-sm uppercase tracking-wider"
                           >
                             {child.name}
                           </LocalizedClientLink>
-                          {/* Placeholder for sub-children if needed */}
+                          {child.category_children && (
+                            <ul className="flex flex-col gap-y-2">
+                              {child.category_children.map((grandchild) => (
+                                <li key={grandchild.id}>
+                                  <LocalizedClientLink
+                                    href={`/categories/${grandchild.handle}`}
+                                    className="text-ui-fg-subtle hover:text-brand-primary transition-colors text-sm"
+                                  >
+                                    {grandchild.name}
+                                  </LocalizedClientLink>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       ))}
                     </div>
